@@ -1,0 +1,22 @@
+
+
+#container {
+    width: 500px;
+    border: 1px solid black;
+   
+    
+} 
+
+.row {
+    display: flex;
+    
+    
+}
+
+h1 {
+    color: red;
+}
+
+.col {
+    
+    border: 1px solid black;
