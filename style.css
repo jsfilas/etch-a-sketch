@@ -1,9 +1,10 @@
+header {
 
+}
 
 #container {
-    width: 500px;
+    width: 600px;
     border: 1px solid black;
-   
     
 } 
 
@@ -20,3 +21,8 @@ h1 {
 .col {
     
     border: 1px solid black;
+}
+
+.cellHover {
+    background-color: black;
+}

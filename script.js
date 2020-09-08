@@ -1,27 +1,60 @@
+window.onload = function init() {
+    makeGrid();
+    addListner();
+}
 
 function makeGrid(size) {
 
-    let cellSize = 500/size;
+    if (!size) {
+        size = 16;
+    }
+    
+    let cellSize = 600/size;
 
-    const container = document.querySelector("#container");
+    let container = document.querySelector("#container");
     for(let row = 0; row < size; row++) {
-        const rowCell = document.createElement("div");
+        let rowCell = document.createElement("div");
         rowCell.classList.add('row');
         container.appendChild(rowCell);
     }
     
-    const rowCell = document.querySelectorAll('div.row');
+    let rowCell = document.querySelectorAll('div.row');
     rowCell.forEach(row => {
-
-    
-    for (let col = 0; col < size; col++) {
-        const colCell = document.createElement("div");
+        for (let col = 0; col < size; col++) {
+        let colCell = document.createElement("div");
         colCell.classList.add('col'); 
         colCell.style.height = `${cellSize}px`;
         colCell.style.width = `${cellSize}px`;
         row.appendChild(colCell);
-    }
-});
+        }
+    });
 }
 
-makeGrid(16);
+
+
+function addListner() {
+    const cell = document.querySelectorAll('.col');
+    cell.forEach((cell) => {
+        cell.addEventListener('mouseover', changeColor);
+    })
+};
+
+function changeColor() {
+    this.classList.add('cellHover');
+};
+
+
+
+function removeOldGrid() {
+        const cell = document.getElementById('container');
+        cell.innerHTML = '';
+};
+
+function clearGrid() {
+    removeOldGrid();
+    var size = prompt("Please enter the total grid size");
+   makeGrid(size);
+   addListner();
+}
+
+document.getElementById("reset").addEventListener("click", clearGrid);
