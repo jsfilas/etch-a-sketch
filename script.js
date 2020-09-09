@@ -52,7 +52,14 @@ function removeOldGrid() {
 
 function clearGrid() {
     removeOldGrid();
-    var size = prompt("Please enter the total grid size");
+    var size = prompt("Please enter the total grid size, example 16, 32, 64");
+    if(size >=100) {
+        alert("Submissions over 100 can make your computer laggy, we suggest going down to 64");
+        size = prompt("Please enter the total grid size, example 16, 32, 64");
+    } else if(isNaN(size)) {
+        alert("Submissions must be a number, please try again.");
+        size = prompt("Please enter the total grid size, example 16, 32, 64");
+    }
    makeGrid(size);
    addListner();
 }
