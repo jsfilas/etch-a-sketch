@@ -1,11 +1,10 @@
-header {
-
-}
 
 #container {
     width: 600px;
-    border: 1px solid black;
-    
+    border: 10px solid rgb(255, 225, 52);
+    border-radius: 5px;
+    margin: auto;
+    background-color: white;
 } 
 
 .row {
@@ -15,7 +14,9 @@ header {
 }
 
 h1 {
-    color: red;
+    color: rgb(247, 242, 242);
+    text-align: center;
+    
 }
 
 .col {
@@ -25,4 +26,20 @@ h1 {
 
 .cellHover {
     background-color: black;
+}
+
+#box {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+button {
+    color: white;
+    background-color: green;
+}
+
+body {
+    background-color: rgb(194, 82, 82);
 }
